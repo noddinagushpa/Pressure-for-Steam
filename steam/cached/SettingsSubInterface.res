@@ -1,127 +1,405 @@
-"steam/cached/SettingsSubInterface.res" {
-	styles {}
-	layout {
-		place {
-			control="Label4"
-			x=18
-			y=10
-			margin-right=43
-			dir=down
-		}
-		place {
-			control="LanguageCombo"
-			start=Label4
-			y=4
-			width=340
-			height=28
-			dir=down
-		}
-		place {
-			control="TranslationLabel"
-			start=LanguageCombo
-			y=8
-			dir=down
-		}
-		place {
-			control="Divider1"
-			start="TranslationLabel"
-			width=max
-			y=10
-			dir=down
-			margin-right=43
-		}
-		place {
-			control="Label1"
-			start="Divider1"
-			width=max
-			margin-right=43
-			y=10
-			dir=down
-		}
-		place {
-			control="FavoriteWindowCombo"
-			start=Label1
-			y=4
-			width=340
-			dir=down
-		}
-		place {
-			control="Divider3"
-			start=FavoriteWindowCombo
-			width=max
-			y=10
-			dir=down
-			margin-right=43
-		}
-		place {
-			control="Label3"
-			start=Divider3
-			width=500
-			y=10
-			dir=down
-		}
-		place {
-			control="SkinCombo"
-			start=Label3
-			y=4
-			width=340
-			height=28
-			dir=down
-		}
-		place {
-			controls=DPIScalingCheck,AutoLaunchCheck,BigPictureModeCheck,DWriteCheck,UrlBarCheck
-			start=SkinCombo
-			y=10
-			dir=down
-			spacing=-5
-		}
-		// Remove option for linux
-		place {
-			control=H264HWAccelCheck
-			width=0
-			height=0
-		}
-		// Readd button for Windows
-		place [$WINDOWS] {
-			controls=H264HWAccelCheck
-			start=UrlBarCheck
-			y=-5
-			dir=down
-		}
-
-		// Start divider at UrlBarCheck for Linux
-		place {
-			control="Divider2"
-			start=UrlBarCheck
-			y=5
-			width=max
-			margin-right=43
-			dir=down
-		}
-		// Start divider at H264HWAccelCheck for Windows
-		place [$WINDOWS] {
-			control="Divider2"
-			start=H264HWAccelCheck
-			y=5
-			width=max
-			margin-right=43
-			dir=down
-		}
-		place {
-			controls=NotifyAvailableGamesCheck
-			start=Divider2
-			y=10
-			width=max
-			margin-right=43
-			dir=down
-		}
-		place {
-			control="SetJumpListOptionsButton"
-			start=NotifyAvailableGamesCheck
-			y=8
-			width=340
-			height=28
-			dir=down
-		}
+"steam/cached/SettingsSubInterface.res"
+{
+	"LanguageCombo"
+	{
+		"ControlName"		"ComboBox"
+		"fieldName"		"LanguageCombo"
+		"xpos"		"20"
+		"ypos"		"43"
+		"wide"		"235"
+		"tall"		"24"
+		"AutoResize"		"0"
+		"PinCorner"		"0"
+		"visible"		"1"
+		"enabled"		"1"
+		"tabPosition"		"1"
+		"paintbackground"		"1"
+		"textHidden"		"0"
+		"editable"		"0"
+		"maxchars"		"-1"
+		"NumericInputOnly"		"0"
+		"unicode"		"0"
 	}
+	"TranslationLabel"
+	{
+		"ControlName"		"URLLabel"
+		"fieldName"		"TranslationLabel"
+		"xpos"		"20"
+		"ypos"		"70"
+		"wide"		"436"
+		"tall"		"24"
+		"AutoResize"		"0"
+		"PinCorner"		"0"
+		"visible"		"1"
+		"enabled"		"1"
+		"tabPosition"		"0"
+		"paintbackground"		"1"
+		"labelText"		"#Steam_HelpUsTranslate"
+		"textAlignment"		"west"
+		"wrap"		"0"
+		"URLText"		"http://translation.steampowered.com"
+	}
+	"Divider1"
+	{
+		"ControlName"		"Divider"
+		"fieldName"		"Divider1"
+		"xpos"		"20"
+		"ypos"		"101"
+		"wide"		"440"
+		"tall"		"2"
+		"AutoResize"	"0"
+		"PinCorner"		"0"
+		"visible"		"1"
+		"enabled"		"1"
+		"tabPosition"		"0"
+		"paintbackground"		"1"
+	}
+	"Label1" [$WINDOWS]
+	{
+		"ControlName"		"Label"
+		"fieldName"		"Label1"
+		"xpos"		"20"
+		"ypos"		"114"
+		"wide"		"402"
+		"tall"		"30"
+		"AutoResize"		"0"
+		"PinCorner"		"0"
+		"visible"		"1"
+		"enabled"		"1"
+		"tabPosition"		"0"
+		"paintbackground"		"1"
+		"appearance"		"LabelDull"
+		"labelText"		"#TrackerUI_FavoriteWindowLabel_Windows"  
+		"textAlignment"		"north-west"
+		"wrap"		"1"
+	}
+	"Label1" [!$WINDOWS]
+	{
+		"ControlName"		"Label"
+		"fieldName"		"Label1"
+		"xpos"		"20"
+		"ypos"		"114"
+		"wide"		"402"
+		"tall"		"30"
+		"AutoResize"		"0"
+		"PinCorner"		"0"
+		"visible"		"1"
+		"enabled"		"1"
+		"tabPosition"		"0"
+		"paintbackground"		"1"
+		"appearance"		"LabelDull"
+		"labelText"		"#TrackerUI_FavoriteWindowLabel"  
+		"textAlignment"		"north-west"
+		"wrap"		"1"
+	}	
+	"FavoriteWindowCombo"
+	{
+		"ControlName"		"ComboBox"
+		"fieldName"		"FavoriteWindowCombo"
+		"xpos"		"20"
+		"ypos"		"145"
+		"wide"		"235"
+		"tall"		"24"
+		"AutoResize"		"0"
+		"PinCorner"		"0"
+		"visible"		"1"
+		"enabled"		"1"
+		"tabPosition"		"2"
+		"paintbackground"		"1"
+		"textHidden"		"0"
+		"editable"		"0"
+		"maxchars"		"-1"
+		"NumericInputOnly"		"0"
+		"unicode"		"0"
+	}
+	"Divider3"
+	{
+		"ControlName"		"Divider"
+		"fieldName"		"Divider3"
+		"xpos"		"20"
+		"ypos"		"180"
+		"wide"		"440"
+		"tall"		"2"
+		"AutoResize"	"0"
+		"PinCorner"		"0"
+		"visible"		"1"
+		"enabled"		"1"
+		"tabPosition"		"0"
+		"paintbackground"		"1"
+	}
+	"Label3"
+	{
+		"ControlName"		"Label"
+		"fieldName"		"Label3"
+		"xpos"		"20"
+		"ypos"		"187"
+		"wide"		"416"
+		"tall"		"24"
+		"AutoResize"		"0"
+		"PinCorner"		"0"
+		"visible"		"1"
+		"enabled"		"1"
+		"tabPosition"		"0"
+		"paintbackground"		"1"
+		"appearance"		"LabelDull"
+		"labelText"		"#Steam_SelectSkinToUse"
+		"textAlignment"		"west"
+		"associate"		"SkinCombo"
+		"wrap"		"0"
+	}
+	"SkinCombo"
+	{
+		"ControlName"		"ComboBox"
+		"fieldName"		"SkinCombo"
+		"xpos"		"20"
+		"ypos"		"209"
+		"wide"		"235"
+		"tall"		"24"
+		"AutoResize"		"0"
+		"PinCorner"		"0"
+		"visible"		"1"
+		"enabled"		"1"
+		"tabPosition"		"3"
+		"paintbackground"		"1"
+		"textHidden"		"0"
+		"editable"		"0"
+		"maxchars"		"-1"
+		"NumericInputOnly"		"0"
+		"unicode"		"0"
+	}
+	"DPIScalingCheck" [$WINDOWS]
+	{
+		"ControlName"		"CheckButton"
+		"fieldName"		"DPIScalingCheck"
+		"xpos"		"17"
+		"ypos"		"241"
+		"wide"		"430"
+		"tall"		"24"
+		"AutoResize"		"0"
+		"PinCorner"		"0"
+		"visible"		"1"
+		"enabled"		"1"
+		"tabPosition"		"4"
+		"paintbackground"		"1"
+		"labelText"		"#Steam_DPIScaling_Option_Windows"
+		"textAlignment"		"west"
+		"wrap"		"0"
+		"Default"		"0"
+		"selected"		"0"
+	}
+	"DPIScalingCheck" [$LINUX]
+	{
+		"ControlName"		"CheckButton"
+		"fieldName"		"DPIScalingCheck"
+		"xpos"		"17"
+		"ypos"		"241"
+		"wide"		"430"
+		"tall"		"24"
+		"AutoResize"		"0"
+		"PinCorner"		"0"
+		"visible"		"1"
+		"enabled"		"1"
+		"tabPosition"		"4"
+		"paintbackground"		"1"
+		"labelText"		"#Steam_DPIScaling_Option"
+		"textAlignment"		"west"
+		"wrap"		"0"
+		"Default"		"0"
+		"selected"		"0"
+	}
+	"AutoLaunchCheck"
+	{
+		"ControlName"		"CheckButton"
+		"fieldName"		"AutoLaunchCheck"
+		"xpos"		"17"
+		"ypos"		"265"
+		"wide"		"430"
+		"tall"		"24"
+		"AutoResize"		"0"
+		"PinCorner"		"0"
+		"visible"		"1"
+		"enabled"		"1"
+		"tabPosition"		"5"
+		"paintbackground"		"1"
+		"labelText"		"#Steam_LaunchSteamOnStartup_Option"
+		"textAlignment"		"west"
+		"wrap"		"0"
+		"Default"		"0"
+		"selected"		"0"
+	}
+	"BigPictureModeCheck"
+	{
+		"ControlName"		"CheckButton"
+		"fieldName"		"BigPictureModeCheck"
+		"xpos"		"17"
+		"ypos"		"289"
+		"wide"		"430"
+		"tall"		"24"
+		"AutoResize"		"0"
+		"PinCorner"		"0"
+		"visible"		"1"
+		"enabled"		"1"
+		"tabPosition"		"6"
+		"paintbackground"		"1"
+		"labelText"		"#Steam_BPMOnStartup_Option"
+		"textAlignment"		"west"
+		"wrap"		"0"
+		"Default"		"0"
+		"selected"		"0"
+	}
+	"UrlBarCheck"
+	{
+		"ControlName"		"CheckButton"
+		"fieldName"		"UrlBarCheck"
+		"xpos"		"17"
+		"ypos"		"313"
+		"wide"		"430"
+		"tall"		"24"
+		"AutoResize"		"0"
+		"PinCorner"		"0"
+		"visible"		"1"
+		"enabled"		"1"
+		"tabPosition"		"7"
+		"paintbackground"		"1"
+		"labelText"		"#Steam_ShowUrlBar_Option"
+		"textAlignment"		"west"
+		"wrap"		"0"
+		"Default"		"0"
+		"selected"		"0"
+	}
+	"GPUWebViewCheck"
+	{
+		"ControlName"		"CheckButton"
+		"fieldName"		"GPUWebViewCheck"
+		"xpos"		"17"
+		"ypos"		"337"
+		"wide"		"430"
+		"tall"		"24"
+		"AutoResize"		"0"
+		"PinCorner"		"0"
+		"visible"		"1"
+		"enabled"		"1"
+		"tabPosition"		"8"
+		"paintbackground"		"1"
+		"labelText"		"#Steam_EnableGPUWebViews_Option"
+		"textAlignment"		"west"
+		"wrap"		"0"
+		"Default"		"0"
+		"selected"		"0"
+	}
+	"DWriteCheck" [$WINDOWS]
+	{
+		"ControlName"		"CheckButton"
+		"fieldName"		"DWriteCheck"
+		"xpos"		"17"
+		"ypos"		"361"
+		"wide"		"430"
+		"tall"		"24"
+		"AutoResize"		"0"
+		"PinCorner"		"0"
+		"visible"		"1"
+		"enabled"		"1"
+		"tabPosition"		"8"
+		"paintbackground"		"1"
+		"labelText"		"#Steam_UseDirectWrite_Option"
+		"textAlignment"		"west"
+		"wrap"		"0"
+		"Default"		"0"
+		"selected"		"0"
+	}
+	"H264HWAccelCheck" [$WINDOWS]
+	{
+		"ControlName"		"CheckButton"
+		"fieldName"		"H264HWAccelCheck"
+		"xpos"		"17"
+		"ypos"		"392"
+		"wide"		"430"
+		"tall"		"24"
+		"AutoResize"		"0"
+		"PinCorner"		"0"
+		"visible"		"1"
+		"enabled"		"1"
+		"tabPosition"		"9"
+		"paintbackground"		"1"
+		"labelText"		"#Steam_UseH264HWAccel_Option"
+		"textAlignment"		"west"
+		"wrap"		"0"
+		"Default"		"0"
+		"selected"		"0"
+	}
+	"Divider2"
+	{
+		"ControlName"		"Divider"
+		"fieldName"		"Divider2"
+		"xpos"		"20"
+		"ypos"		"423"
+		"wide"		"440"
+		"tall"		"2"
+		"AutoResize"		"0"
+		"PinCorner"		"0"
+		"visible"		"1"
+		"enabled"		"1"
+		"tabPosition"		"0"
+		"paintbackground"		"1"
+	}
+	"NotifyAvailableGamesCheck"
+	{
+		"ControlName"		"CheckButton"
+		"fieldName"		"NotifyAvailableGamesCheck"
+		"xpos"		"17"
+		"ypos"		"430"
+		"wide"		"430"
+		"tall"		"40"
+		"AutoResize"		"0"
+		"PinCorner"		"0"
+		"visible"		"1"
+		"enabled"		"1"
+		"tabPosition"		"10"
+		"paintbackground"		"1"
+		"labelText"		"#Steam_Settings_NotifyMeWithSteamInstantMessages"
+		"textAlignment"		"north-west"
+		"wrap"		"1"
+		"Default"		"0"
+	}
+	"Label4"
+	{
+		"ControlName"		"Label"
+		"fieldName"		"Label4"
+		"xpos"		"20"
+		"ypos"		"15"
+		"wide"		"475"
+		"tall"		"24"
+		"AutoResize"		"0"
+		"PinCorner"		"0"
+		"visible"		"1"
+		"enabled"		"1"
+		"tabPosition"		"0"
+		"paintbackground"		"1"
+		"labelText"		"#Steam_LanguageSelect"
+		"textAlignment"		"west"
+		"associate"		"LanguageCombo"
+		"wrap"		"0"
+	}
+	
+	"SetJumplistOptionsButton"
+	{
+		"ControlName"		"Button"
+		"fieldName"		"SetJumpListOptionsButton"
+		"xpos"		"20"
+		"ypos"		"485"
+		"wide"		"235"
+		"tall"		"24"
+		"AutoResize"		"0"
+		"PinCorner"		"0"
+		"visible"		"1"
+		"enabled"		"1"
+		"tabPosition"		"11"
+		"paintbackground"		"1"
+		"labelText"		"#Steam_SetJumplistOptions"
+		"textAlignment"		"west"
+		"wrap"		"0"
+		"Command"		"SetJumpListOptions"
+		"Default"		"0"
+		"selected"		"0"
+	}	
 }
